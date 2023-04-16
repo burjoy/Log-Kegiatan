@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous"/>
+    <title>Log Kegiatan</title>
+</head>
+<body class="bg-gray-200">
+    <header class="w-screen h-16 bg-white drop-shadow-lg text-center p-4">
+        <h2>Log Kegiatan Harian</h2>
+    </header>
+
+    <article class="text-center mt-10">
+        <!-- <button class="border-2 border-stone-700 rounded-md p-3 hover:bg-black hover:text-white">Click Me</button> -->
+        <div class="mb-7" id="date_input">
+            <form action="">
+                <input list="date" id="tanggal" class="text-center">
+                <!-- <datalist id="date">
+                    <option value="1"></option>
+                    <option value="2"></option>
+                </datalist> -->
+                <input list="month" id="bulan" class="text-center">
+                <input list="year" id="tahun" class="text-center">
+                <br>
+                <input type="submit" value="Schedule Kegiatan" class="border-2 border-stone-700 rounded-md p-3 hover:bg-black hover:text-white mt-8">
+            </form>
+        </div>
+        <div class="" id="activity_input">
+            <form action="">
+                <input list="hour" id="jam" class="text-center">
+                <input list="minute" name="" id="menit" class="text-center">
+                <br>
+                <br>
+                <input type="text" name="kegiatan" id="" class="text-center">
+                <br>
+                <input type="submit" value="Submit Kegiatan" class="border-2 border-stone-700 rounded-md p-3 hover:bg-black hover:text-white mt-8">
+            </form>
+        </div>
+        <div class="flex justify-around" id="kegiatan">
+            <div class="w-[30%] bg-white p-4" id="belum_selesai">
+                <h2>Kegiatan Belum Selesai</h2>
+                <!-- <li class="flex justify-between items-center list-decimal">1. Check Mark <span class="fa fa-check ml-auto mr-4 text-green-500"></span><span class="fa fa-times"></span></li> -->
+            </div>
+            <div class="w-[30%] bg-white p-4" id="selesai">
+                <h2>Kegiatan Sudah Selesai</h2>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>
