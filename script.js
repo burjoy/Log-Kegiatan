@@ -13,6 +13,7 @@ let done = document.querySelector("#selesai");
 let activity_input = document.querySelector("div#activity_input form");
 let jam = document.querySelector("#jam");
 let menit = document.querySelector("#menit");
+let aktivitas = document.querySelector("#activity_input");
 // button.addEventListener('click', (e) => {
 //     let list = document.createElement('img');
 //     list.innerHTML = 'Test';
@@ -45,6 +46,7 @@ document.addEventListener('click', (e) => {
 submit_kegiatan[0].addEventListener('click', (e) => {
     e.preventDefault();
     console.log(e);
+    aktivitas.classList.remove('hidden');
 })
 
 submit_kegiatan[1].addEventListener('click', (e) => {
@@ -54,14 +56,21 @@ submit_kegiatan[1].addEventListener('click', (e) => {
     }
     else{
         let list_kegiatan = document.createElement('p');
+        let jam_kegiatan = document.createElement('span');
         let span1 = document.createElement('span');
         let span2 = document.createElement('span');
-        list_kegiatan.innerText = kegiatan.value;
-        list_kegiatan.setAttribute('class', 'flex justify-between items-center list-decimal list-decimal hover:cursor-pointer text-lg');
-        span1.setAttribute('class', 'fa fa-check ml-auto mr-6 text-green-600 hover:cursor-pointer text-lg');
-        span2.setAttribute('class', 'fa fa-times text-red-600');
+        let tanggal_kegiatan = document.createElement('span');
+        list_kegiatan.innerText =  kegiatan.value;
+        jam_kegiatan.innerText = jam.value + ' : ' + menit.value;
+        tanggal_kegiatan.innerText = in_date.value + ' ' + in_month.value + ' ' + in_year.value;
+        list_kegiatan.setAttribute('class', 'flex justify-between items-center list-decimal list-decimal text-md');
+        span1.setAttribute('class', 'fa fa-check text-green-600 hover:cursor-pointer text-md');
+        span2.setAttribute('class', 'fa fa-times text-red-600 hover:cursor-pointer ');
+        jam_kegiatan.setAttribute('class', '');
+        list_kegiatan.append(jam_kegiatan);
         list_kegiatan.append(span1);
         list_kegiatan.append(span2);
+        list_kegiatan.prepend(tanggal_kegiatan);
         not_done.append(list_kegiatan);
         num++;
     }
@@ -112,7 +121,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     datalist = document.createElement('datalist');
     datalist.setAttribute('id', 'minute');
-    for(let i = 0;i <= 24;i++){
+    for(let i = 0;i <= 59;i++){
         let option = document.createElement('option');
         option.setAttribute('value', i);
         datalist.append(option);   
